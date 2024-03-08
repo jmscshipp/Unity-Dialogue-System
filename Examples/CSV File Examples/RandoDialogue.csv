@@ -1,0 +1,6 @@
+Quest Requirements;Item Requirements;Conversation ID;Dialogue;Repeat Requirements;Triggers
+#are_you_my_brother;~;#rando1;Huh? You want to use my axe to chop down a tree for your brother?;~;#tree_chopped #rando2
+~;~;#rando1;You look kind of young to be carrying an axe . . .;~;~
+~;~;#rando1;I'll just give you this wood I chopped. Peace.;~;~
+~;~;#rando2;Oh, hey there! What's up.;~;~
+~;~;#rando3;Just doing my tree chopping thing, ya know how it is.;~;~
