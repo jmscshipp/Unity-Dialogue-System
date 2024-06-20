@@ -35,7 +35,8 @@ public class DialogueDisplay : MonoBehaviour
     private int lineIndex;
     private DialogueConversation currentConvo;
 
-    public UnityEvent OnDialogueCompletion;
+    public UnityEvent OnDialogueStart;
+    public UnityEvent OnDialogueFinish;
 
     private static DialogueDisplay instance;
 
@@ -161,6 +162,7 @@ public class DialogueDisplay : MonoBehaviour
         AudioManager.Instance().PlaySound(dialogueBoxOpenSound);
         GetComponent<Canvas>().enabled = true;
         GetComponent<Animator>().SetBool("activate", true);
+        OnDialogueStart.Invoke();
         StartCoroutine(BeginText());
     }
 
@@ -210,6 +212,6 @@ public class DialogueDisplay : MonoBehaviour
     {
         yield return new WaitForSeconds(closeAnimationLength);
         GetComponent<Canvas>().enabled = false;
-        OnDialogueCompletion.Invoke();
+        OnDialogueFinish.Invoke();
     }
 }
