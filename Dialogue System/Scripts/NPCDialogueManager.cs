@@ -67,7 +67,7 @@ public class NPCDialogueManager : MonoBehaviour
         }
 
         // send to dialogue display
-        DialogueDisplay.Instance().OnDialogueCompletion.AddListener(ConversationCompleted);
+        DialogueDisplay.Instance().OnDialogueFinish.AddListener(ConversationCompleted);
         DialogueDisplay.Instance().ActivateDisplay(currentConvo);
 
         // look at this ^^
@@ -93,7 +93,7 @@ public class NPCDialogueManager : MonoBehaviour
         }
 
         currentConvo.SetReadStatus(true);
-        DialogueDisplay.Instance().OnDialogueCompletion.RemoveListener(ConversationCompleted);
+        DialogueDisplay.Instance().OnDialogueFinish.RemoveListener(ConversationCompleted);
     }
 
     private bool QuestRequirementsMet(string[] requirements)
